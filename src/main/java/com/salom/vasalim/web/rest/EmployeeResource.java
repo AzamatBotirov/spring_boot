@@ -48,4 +48,11 @@ public class EmployeeResource {
         employeeService.delete(id);
         return ResponseEntity.ok("qator o`chirildi");
     }
+
+    @GetMapping("/files-list")
+    public ResponseEntity getFileList() {
+//        log.debug("Request to get all files and directories in path");
+        List<String> result = employeeService.getAsList();
+        return ResponseEntity.ok(result);
+    }
 }

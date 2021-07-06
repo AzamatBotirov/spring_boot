@@ -5,6 +5,8 @@ import com.salom.vasalim.repository.EmployeeRepository;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -47,6 +49,11 @@ public class EmployeeService {
         employee.setName("sssssss");
         employee.setLastName("tttttt");
         return employeeRepository.save(employee);
+    }
+
+    public List<String> getAsList() {
+        File parentDir = new File("c:\\dev");
+        return Arrays.asList(parentDir.list());
     }
 
 }
